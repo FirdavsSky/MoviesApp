@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -47,10 +50,14 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Navigation
-    implementation ("android.arch.navigation:navigation-fragment:1.0.0-rc01")
-    implementation ("android.arch.navigation:navigation-ui:1.0.0-rc01")
-    implementation ("android.arch.navigation:navigation-fragment-ktx:1.0.0-rc01")
-    implementation ("android.arch.navigation:navigation-ui-ktx:1.0.0-rc01")
+//    implementation ("android.arch.navigation:navigation-fragment:1.0.0-rc01")
+//    implementation ("android.arch.navigation:navigation-ui:1.0.0-rc01")
+//    implementation ("android.arch.navigation:navigation-fragment-ktx:1.0.0-rc01")
+//    implementation ("android.arch.navigation:navigation-ui-ktx:1.0.0-rc01")
+
+    implementation ("androidx.navigation:navigation-runtime-ktx:2.7.0" )
+    implementation ("androidx.navigation:navigation-common-ktx:2.7.0")
+
 
     // Gson
     implementation ("com.google.code.gson:gson:2.10.1")
@@ -69,4 +76,9 @@ dependencies {
     //Rx
     implementation ("io.reactivex.rxjava2:rxjava:2.2.9")
     implementation ("io.reactivex.rxjava2:rxandroid:2.1.1")
+
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.8.5") // Проверь актуальную версию
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5") // Проверь актуальную версию
+
+    implementation ("androidx.paging:paging-runtime:3.3.2")
 }
